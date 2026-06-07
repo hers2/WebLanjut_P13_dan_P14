@@ -24,19 +24,24 @@ from artikel.views import (
     admin_artikel_list,
     admin_artikel_tambah,
     admin_artikel_update,
-    admin_artikel_delete
-    ,
+    admin_artikel_delete,
+
     admin_management_user_list,
     admin_management_user_edit
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
     
     path('', index),
     path('artikel/<int:id>/', detail_artikel, name='detail_artikel'),
     path('kontak/', kontak, name='kontak'),
     path('galeri/', galeri, name='galeri'),
+
+    # ==================== RUTE API UTAMA ====================
+    # Ini akan memanggil file artikel/urls_api.py
+    path('api/', include("artikel.urls_api")),
 
     # ==================== SISTEM DASHBOARD (DIRECT PATH) ====================
     path('dashboard/', dashboard, name='dashboard'),
