@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h2 class="text-center mb-4 text-white">📸 Galeri Gemoy Capybara ✨</h2>
+
+<style>
+    .card {
+        border: none;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: 0.4s;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        background: rgba(0,0,0,0.5); /* 🔥 bikin kontras */
+        color: white;
+    }
+
+    .card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+        height: 220px;
+        object-fit: cover;
+        filter: brightness(0.7); /* 🔥 gelapin gambar biar text kebaca */
+    }
+
+    .card-body {
+        position: relative;
+        z-index: 2;
+    }
+
+    .btn-cute {
+        border-radius: 50px;
+        background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+        border: none;
+        color: white;
+        transition: 0.3s;
+    }
+
+    .btn-cute:hover {
+        transform: scale(1.1);
+        background: linear-gradient(45deg, #a18cd1, #fbc2eb);
+    }
+</style>
+
+<div class="row g-4">
+
+    <div class="col-md-4">
+        <div class="card">
+            <img src="{% static 'img/capybara1.jpeg' %}" class="card-img-top">
+            <div class="card-body text-center">
+                <h5 class="card-title">🐹 Capybara Santuy</h5>
+                <p class="card-text">Lagi chill tanpa beban 😆</p>
+                <a href="{% static 'img/capybara1.jpeg' %}" target="_blank" class="btn btn-cute">👀 Lihat</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <img src="{% static 'img/capybara2.jpeg' %}" class="card-img-top">
+            <div class="card-body text-center">
+                <h5 class="card-title">🌊 Capybara Spa</h5>
+                <p class="card-text">Hidup santai di air hangat 🛁</p>
+                <a href="{% static 'img/capybara2.jpeg' %}" target="_blank" class="btn btn-cute">👀 Lihat</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <img src="{% static 'img/capybara3.jpeg' %}" class="card-img-top">
+            <div class="card-body text-center">
+                <h5 class="card-title">🍉 Capybara Makan</h5>
+                <p class="card-text">Makan dulu, mikir nanti 🤤</p>
+                <a href="{% static 'img/capybara3.jpeg' %}" target="_blank" class="btn btn-cute">👀 Lihat</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
